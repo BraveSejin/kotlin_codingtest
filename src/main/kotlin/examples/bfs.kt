@@ -12,11 +12,11 @@ import java.util.Queue
 111111
 111111
  */
-val dx = arrayOf(0, 1, 0, -1)
-val dy = arrayOf(1, 0, -1, 0)
-lateinit var data: Array<Int>
-var n: Int = 0
-var m: Int = 0
+private val dx = arrayOf(0, 1, 0, -1)
+private val dy = arrayOf(1, 0, -1, 0)
+private lateinit var data: Array<Int>
+private var n: Int = 0
+private var m: Int = 0
 
 fun bfs(array: Array<IntArray>) {
 
