@@ -1,4 +1,4 @@
-class Solution {
+class Solution1 {
     fun solution(survey: Array<String>, choices: IntArray): String {
         val map: MutableMap<String, Int> = mutableMapOf("RT" to 0, "CF" to 0, "JM" to 0, "AN" to 0)
         val scores = arrayOf(-9999, -3, -2, -1, 0, 1, 2, 3)
@@ -29,7 +29,7 @@ class Solution {
 
 fun main() {
 
-    val sol = Solution().solution(
+    val sol = Solution1().solution(
         survey = arrayOf("AN", "CF", "MJ", "RT", "NA"), choices = intArrayOf(5, 3, 2, 7, 5)
     )
     print(sol)
