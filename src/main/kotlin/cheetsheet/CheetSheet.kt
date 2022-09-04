@@ -2,7 +2,13 @@ package cheetsheet
 
 //https://alpharodun.tistory.com/42 반복문 깔끔 정리
 
-//fun main() = with(System.`in`.bufferedReader()) {
+
+// with 쓰기 싫을때
+//val reader = System.`in`.bufferedReader()
+//val data = reader.readLine().split(" ").map { it.toInt() }
+
+
+//fun thisiscodingtest.part2.c4.main() = with(System.`in`.bufferedReader()) {
 //    // 정수 하나 읽기
 //    val num = readLine().toInt()
 //
@@ -13,7 +19,7 @@ package cheetsheet
 //    val char = readLine().toCharArray
 //}
 
-//fun main() = with(System.`in`.bufferedReader()) {
+//fun thisiscodingtest.part2.c4.main() = with(System.`in`.bufferedReader()) {
 //    // 기본
 //    print("hello")
 //
