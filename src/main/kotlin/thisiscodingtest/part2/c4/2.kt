@@ -1,3 +1,4 @@
+package thisiscodingtest.part2.c4
 fun main() {
     val dRow = arrayOf(1, 1, -1, -1, 2, 2, -2, -2)
     val dCol = arrayOf(2, -2, 2, -2, 1, -1, -1, 1)

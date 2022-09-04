@@ -1,9 +1,11 @@
 package thisiscodingtest
 
 import java.lang.Integer.max
+import java.util.Collections
 
 fun main() {
 
+    sol2()
 }
 
 private fun sol1() {
@@ -19,7 +21,7 @@ private fun sol2() {
     val (N, M) = readln().split(" ").map { it.toInt() }
     var res = 0
     repeat(N) {
-        res = max(readln().split(" ").map { it.toInt() }.min(), res)
+        res = max(readln().split(" ").map { it.toInt() }.let { Collections.min(it) }, res)
     }
     println(res)
 }
