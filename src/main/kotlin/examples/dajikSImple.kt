@@ -7,7 +7,7 @@ private lateinit var graph: Array<MutableList<Pair<Int, Int>>>
 private lateinit var visited: BooleanArray
 private lateinit var distance: IntArray
 
-fun simpleDajik(
+private fun simpleDajik(
     startVertex: Int
 ) {
     distance[startVertex] = 0
@@ -28,7 +28,7 @@ fun simpleDajik(
 
 }
 
-fun getSmallestNode(): Int {
+private fun getSmallestNode(): Int {
     var min_value: Int = INF
     var idx = 0
     for (i in 1 until n + 1) {
