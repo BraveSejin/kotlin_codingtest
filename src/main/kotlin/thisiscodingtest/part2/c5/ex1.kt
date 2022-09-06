@@ -27,7 +27,7 @@ fun stackEx() {
 
 }
 
-fun queueEx() {
+private fun queueEx() {
     println("queue example")
     val queue = LinkedList<Int>()
     queue.offer(5)
