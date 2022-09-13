@@ -3,7 +3,7 @@ package programmers
 import java.util.*
 import kotlin.collections.ArrayDeque
 
-class Solution {
+private class Solution {
     fun solution(queue1: IntArray, queue2: IntArray): Int {
         val q1 = ArrayDeque<Int>(queue1.toList())
         val q2 = ArrayDeque<Int>(queue2.toList())
