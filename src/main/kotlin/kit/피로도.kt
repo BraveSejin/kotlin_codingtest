@@ -13,26 +13,22 @@ fun main() {
 }
 
 private var ans = 0
-private var checked = mutableListOf<Boolean>()
-
 private fun solution(k: Int, dungeons: Array<IntArray>): Int {
 
-    checked.addAll(MutableList(k) { false })
-    dfs(k, dungeons, 0)
+
+    val checked = BooleanArray(dungeons.size) { false }
+    dfs(k, dungeons, checked, 0)
 
     return ans
 }
 
-private fun dfs(k: Int, dungeons: Array<IntArray>, cnt: Int) {
-
-
+private fun dfs(k: Int, dungeons: Array<IntArray>, checked: BooleanArray, cnt: Int) {
     for (i in dungeons.indices) {
-        if (!checked[i] && dungeons[i][0] <= k) {
+        if (k >= dungeons[i][0] && !checked[i]) {
             checked[i] = true
-            dfs(k - dungeons[i][1], dungeons, cnt + 1)
+            dfs(k - dungeons[i][1], dungeons, checked, cnt + 1)
             checked[i] = false
         }
     }
     ans = max(ans, cnt)
-
 }
