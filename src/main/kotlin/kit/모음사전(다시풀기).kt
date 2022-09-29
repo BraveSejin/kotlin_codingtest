@@ -1,45 +1,49 @@
 package kit
 
 fun main() {
-    solution("AAAE").also { println(it) }
+    solution("EIO").also { println(it) }
+    solution2("EIO").also { println(it) }
 }
 
-private var ans = 0
-private var found = false
 private fun solution(word: String): Int {
-    var answer = 0
-
-    var start = ""
-    dfs(start, 0, word)
-
+    val arr = intArrayOf(781, 156, 31, 6, 1)
+    var ans = 0
+    word.forEachIndexed { index, char ->
+        when (char) {
+            'A' -> ans += 0 * arr[index] + 1
+            'E' -> ans += 1 * arr[index] + 1
+            'I' -> ans += 2 * arr[index] + 1
+            'O' -> ans += 3 * arr[index] + 1
+            'U' -> ans += 4 * arr[index] + 1
+        }
+    }
     return ans
 }
 
-private fun dfs(string: String, depth: Int, target: String) {
-    println(string)
-    if (found) return
-    ans += 1
-    if (string == target) {
-        found = true
+
+private val aeiou = charArrayOf('A', 'E', 'I', 'O', 'U')
+private var cnt = -1 // ""은 -1
+private var done = false
+
+private fun solution2(word: String): Int {
+    var answer = 0
+    dfs(0, "", word)
+
+    return cnt
+}
+
+private fun dfs(depth: Int, next: String, target: String) {
+    if (depth == 6) {
         return
     }
-
-
-    if (depth != 4) {
-        dfs(string + "A", depth + 1, target)
-        dfs(string + "E", depth + 1, target)
-        dfs(string + "I", depth + 1, target)
-        dfs(string + "O", depth + 1, target)
-        dfs(string + "U", depth + 1, target)
+    cnt += 1
+    if (next == target) {
+        done = true
+        return
     }
-
-
-    when (string[depth]) {
-        'A' -> dfs(string.replace(string[depth], 'E'), depth, target)
-        'E' -> dfs(string.replace(string[depth], 'I'), depth, target)
-        'I' -> dfs(string.replace(string[depth], 'O'), depth, target)
-        'O' -> dfs(string.replace(string[depth], 'U'), depth, target)
+    for (c in aeiou) {
+        if (done) return
+        dfs(depth + 1, next.plus(c), target)
     }
-
 
 }
