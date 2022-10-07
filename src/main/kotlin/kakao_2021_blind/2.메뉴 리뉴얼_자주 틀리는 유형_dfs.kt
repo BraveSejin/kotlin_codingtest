@@ -42,7 +42,6 @@ private fun solution(orders: Array<String>, course: IntArray): Array<String> {
 //이 동네가 핵심 포인트.. DFS를 이용해서 대상을 선택하는 부분이 익숙치 않다.
 // m 개만 선택하게 설계되어있음. 그리고 dfs를 두번 함으로써 선택하는 경우와 선택하지 않는 경우를 분리해뒀따.
 private fun dfs(idx: Int, m: Int, str: String, newStr: String){
-    println(newStr)
     if (newStr.length == m){
         info.merge(newStr, 1, Integer::sum) // key에 밸류가 없다면 1을 더해주고, 있다면 value += 1 해준다.
         return
