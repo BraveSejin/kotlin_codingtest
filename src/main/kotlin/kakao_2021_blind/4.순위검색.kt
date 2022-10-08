@@ -1,6 +1,6 @@
 package kakao_2021_blind
 
-fun solution(info: Array<String>, query: Array<String>): IntArray {
+private fun solution(info: Array<String>, query: Array<String>): IntArray {
 
     val types = arrayOf(
         arrayOf("-", "cpp", "java", "python"),
