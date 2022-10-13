@@ -1,8 +1,8 @@
-var N = 0
-var ans = 0
-lateinit var isUsed1: BooleanArray // 같은 열
-lateinit var isUsed2: BooleanArray // 왼쪽으로 내려가는 대각선
-lateinit var isUsed3: BooleanArray // 오른쪽으로 내려가는 대각선
+private var N = 0
+private var ans = 0
+private lateinit var isUsed1: BooleanArray // 같은 열
+private lateinit var isUsed2: BooleanArray // 왼쪽으로 내려가는 대각선
+private lateinit var isUsed3: BooleanArray // 오른쪽으로 내려가는 대각선
 
 fun main() = with(System.`in`.bufferedReader()) {
     N = readLine().toInt()

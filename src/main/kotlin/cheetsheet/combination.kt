@@ -4,7 +4,7 @@ package cheetsheet
 //ck: 이미 선택된 원소인지 확인
 // start: 탐색 시작 인덱스
 // target: 구하는 원소의 개수
-private fun <T> combination(answer: MutableList<List<T>>, el: List<T>, ck: Array<Boolean>, start: Int, target: Int) {
+private fun <T> combination(answer: MutableList<List<T>>, el: List<T>, ck: BooleanArray, start: Int, target: Int) {
     if (target == 0) {
         answer.addAll(listOf(el.filterIndexed { index, t -> ck[index] }))
     } else {
@@ -19,6 +19,6 @@ private fun <T> combination(answer: MutableList<List<T>>, el: List<T>, ck: Array
 fun main() {
     val arr = listOf(1,2,3,4)
     val answer = mutableListOf<List<Int>>()
-    combination(answer, arr, Array<Boolean>(arr.size){false}, 0,3)
+    combination(answer, arr, BooleanArray(arr.size), 0,3)
     answer.forEach { print(it) }
 }

@@ -1,9 +1,9 @@
 package `boj-bakctraking`
 
-var N = 0
-var S = 0
-var ans = 0
-val sequence: IntArray by lazy { IntArray(N) }
+private var N = 0
+private var S = 0
+private var ans = 0
+private val sequence: IntArray by lazy { IntArray(N) }
 
 private fun main() = with(System.`in`.bufferedReader()) {
     readln().split(" ").map { it.toInt() }
