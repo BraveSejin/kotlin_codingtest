@@ -25,7 +25,8 @@ private fun solution(N: Int, stages: IntArray): IntArray {
     for (stage in 1..N) {
         val passedUserNum = passedUsers[stage]
         val curUserNum = stageToUser.getOrDefault(stage, 0)
-        val failureRate = curUserNum.toFloat() / (curUserNum + passedUserNum)
+        val parent = curUserNum + passedUserNum
+        val failureRate = if (parent == 0) 0f else curUserNum.toFloat() / parent
         stageFailRatePairs.add(Pair(stage, failureRate))
     }
 
@@ -37,10 +38,10 @@ private fun solution(N: Int, stages: IntArray): IntArray {
         else -1
     }
 
-    println(stageFailRatePairs)
     return stageFailRatePairs.map { it.first }.toIntArray()
 }
 
 fun main() {
-    solution(5, intArrayOf(2, 1, 2, 6, 2, 4, 3, 3))
+//    solution(5, intArrayOf(2, 1, 2, 6, 2, 4, 3, 3))
+    solution(5, intArrayOf(3,3,3,3))
 }
