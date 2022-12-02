@@ -1,4 +1,4 @@
-package thisiscodingtest.part2.c7
+package thisiscodingtest.part2.`c7-이분탐색`
 
 import kotlin.math.max
 

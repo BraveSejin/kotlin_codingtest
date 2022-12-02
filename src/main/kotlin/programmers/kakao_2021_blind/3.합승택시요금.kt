@@ -12,7 +12,7 @@ fun main() {
         intArrayOf(2,1,6),
     ))
 }
-val INF = 201*100_001
+private val INF = 201*100_001
 
 private fun solution(n: Int, s: Int, a: Int, b: Int, fares: Array<IntArray>): Int {
     val graph = Array(n + 1) { Array(n + 1) { INF } }
