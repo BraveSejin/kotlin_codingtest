@@ -1,8 +1,6 @@
 package cheetsheet
 
-import java.io.BufferedReader
 import java.util.LinkedList
-import java.util.Queue
 
 /***
 5 6
@@ -14,11 +12,10 @@ import java.util.Queue
  */
 private val dx = arrayOf(0, 1, 0, -1)
 private val dy = arrayOf(1, 0, -1, 0)
-private lateinit var data: Array<Int>
 private var n: Int = 0
 private var m: Int = 0
 
-fun bfs(array: Array<IntArray>) {
+private fun bfs(array: Array<IntArray>) {
 
     val queue = LinkedList<Pair<Int, Int>>()
     queue.offer(Pair(0, 0))

@@ -35,14 +35,20 @@ fun main() {
      */
 
     val scoreComparator = Comparator<Player> { p1, p2 -> p1.score.compareTo(p2.score) }
-    val nameComparator = Comparator<Player> {p1,p2 -> p1.name.compareTo(p2.name)}
+    val nameComparator = Comparator<Player> { p1, p2 -> p1.name.compareTo(p2.name) }
 
-    players.sortWith(scoreComparator)
-    println(players.toList())
-    players.sortWith(nameComparator)
-    println(players.toList())
+    val compositeComparator = Comparator<Player> { p1, p2 ->
+        scoreComparator.compare(p1, p2).let { if (it != 0) it else scoreComparator.compare(p1, p2) }
+//        p1.score.compareTo(p2.score).let { if (it != 0) it else p1.name.compareTo(p2.name) }
+    }
+//    players.sortWith(scoreComparator)
+//    println(players.toList())
+//    players.sortWith(nameComparator)
+//    println(players.toList())
 
-    players.sortWith(compareBy({it.name}, {it.score})) // 여러 기준으로 정렬
+    players.sortedWith(compositeComparator).also { println(it) }
+
+    players.sortWith(compareBy({ it.name }, { it.score })) // 여러 기준으로 정렬
     players.sortedBy { it.score } //sortedWith(compareBy(selector)) 이런 느낌
 
 }
