@@ -41,7 +41,7 @@ fun main() {
 
 // 전력망에 인접한 도시들을 먼저 연결하는 경우 until 모든 도시가 전력망 연결
 // xor 로 필요한 경우만 연결하는게 포인트 (발전소랑, 이미 전력이 있는 도시 연결 필요 x)
-//fun main() {
+//fun thisiscodingtest.part2.c4.main() {
 //    var ans = 0
 //    val (n, m, k) = readln().split(" ").map { it.toInt() }
 //    val powers = mutableSetOf<Int>() // 발전소, 전력망이 닿는 곳

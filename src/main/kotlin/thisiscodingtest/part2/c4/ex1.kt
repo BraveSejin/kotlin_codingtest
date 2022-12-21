@@ -1,3 +1,4 @@
+
 private class Pos(var row: Int, var col: Int)
 
 private enum class Direction { L, R, U, D }
