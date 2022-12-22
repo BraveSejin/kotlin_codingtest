@@ -45,13 +45,14 @@ private fun solution(orders: Array<String>, course: IntArray): Array<String> {
     return answer.sorted().toTypedArray()
 }
 
-private fun <T> combination(answer: MutableList<List<T>>, el: List<T>, ck: Array<Boolean>, start: Int, target: Int) {
+private fun <T> combination(answer: MutableList<List<T>>, elements: List<T>, ck: Array<Boolean>, start: Int, target: Int) {
     if (target == 0) {
-        answer.addAll(listOf(el.filterIndexed { index, t -> ck[index] }))
+//        answer.addAll(listOf(el.filterIndexed { index, t -> ck[index] }))
+        answer.add(elements.filterIndexed { index, t -> ck[index] })
     } else {
-        for (i in start until el.size) {
+        for (i in start until elements.size) {
             ck[i] = true
-            combination(answer, el, ck, i + 1, target - 1)
+            combination(answer, elements, ck, i + 1, target - 1)
             ck[i] = false
         }
     }
