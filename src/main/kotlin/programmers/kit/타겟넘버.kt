@@ -6,20 +6,20 @@ fun main() {
 // 타겟넘버를 만드는 경우의 수.
 // 더하고 뺴다 보면 - 1000 ~ 1000 까지의 숫자들이 나올 것임.
 
-private fun solution(numbers: IntArray, target: Int): Int {
-    var leaves = mutableListOf<Int>(0)
-    // 전부 다 양수인 경우, 하나만 음수인 경우, 두개만 음수인 경우..
-    numbers.forEach { it ->
-        val temp = mutableListOf<Int>()
-        for (leaf in leaves) {
-            temp.add(leaf + it)
-            temp.add(leaf - it)
-        }
-        leaves = temp
-    }
-
-    return leaves.count { it == target }
-}
+//private fun solution(numbers: IntArray, target: Int): Int {
+//    var leaves = mutableListOf<Int>(0)
+//    // 전부 다 양수인 경우, 하나만 음수인 경우, 두개만 음수인 경우..
+//    numbers.forEach { it ->
+//        val temp = mutableListOf<Int>()
+//        for (leaf in leaves) {
+//            temp.add(leaf + it)
+//            temp.add(leaf - it)
+//        }
+//        leaves = temp
+//    }
+//
+//    return leaves.count { it == target }
+//}
 
 private fun solution_dfs(numbers: IntArray, target: Int): Int {
     return dfs(numbers, target, 0)
